@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LegControllerWidget</class>
+ <widget class="QWidget" name="LegControllerWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Asterisk Leg Controller</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <!-- Position Input Controls -->
+   <item>
+    <widget class="QGroupBox" name="position_input_group">
+     <property name="title">
+      <string>Position Control</string>
+     </property>
+     <layout class="QGridLayout" name="position_grid_layout">
+       <!-- X Position -->
+       <item row="0" column="0">
+         <widget class="QLabel" name="x_input_label">
+           <property name="text">
+             <string>X (mm):</string>
+           </property>
+         </widget>
+       </item>
+       <item row="0" column="1">
+         <widget class="QDoubleSpinBox" name="x_input">
+           <property name="minimum">
+             <double>-200.0</double>
+           </property>
+           <property name="maximum">
+             <double>200.0</double>
+           </property>
+           <property name="singleStep">
+             <double>1.0</double>
+           </property>
+         </widget>
+       </item>
+       <!-- Y Position -->
+       <item row="1" column="0">
+         <widget class="QLabel" name="y_input_label">
+           <property name="text">
+             <string>Y (mm):</string>
+           </property>
+         </widget>
+       </item>
+       <item row="1" column="1">
+         <widget class="QDoubleSpinBox" name="y_input">
+           <property name="minimum">
+             <double>-200.0</double>
+           </property>
+           <property name="maximum">
+             <double>200.0</double>
+           </property>
+           <property name="singleStep">
+             <double>1.0</double>
+           </property>
+         </widget>
+       </item>
+       <!-- Z Position -->
+       <item row="2" column="0">
+         <widget class="QLabel" name="z_input_label">
+           <property name="text">
+             <string>Z (mm):</string>
+           </property>
+         </widget>
+       </item>
+       <item row="2" column="1">
+         <widget class="QDoubleSpinBox" name="z_input">
+           <property name="minimum">
+             <double>-200.0</double>
+           </property>
+           <property name="maximum">
+             <double>200.0</double>
+           </property>
+           <property name="singleStep">
+             <double>1.0</double>
+           </property>
+         </widget>
+       </item>
+       <!-- Move Button -->
+       <item row="3" column="0" colspan="2">
+         <widget class="QPushButton" name="move_to_position_button">
+           <property name="text">
+             <string>Move to Position</string>
+           </property>
+         </widget>
+       </item>
+     </layout>
+    </widget>
+   </item>
+
+   <!-- Joint Angle Controls -->
+   <item>
+    <widget class="QGroupBox" name="joint_control_group">
+     <property name="title">
+      <string>Joint Angle Control</string>
+     </property>
+     <layout class="QGridLayout" name="joint_grid_layout">
+       <!-- Coxa Joint -->
+       <item row="0" column="0">
+         <widget class="QLabel" name="coxa_slider_label">
+           <property name="text">
+             <string>Coxa:</string>
+           </property>
+         </widget>
+       </item>
+       <item row="0" column="1">
+         <widget class="QSlider" name="coxa_slider">
+           <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+           </property>
+         </widget>
+       </item>
+       <item row="0" column="2">
+         <widget class="QLabel" name="target_coxa_label">
+           <property name="text">
+             <string>Target Coxa: 0°</string>
+           </property>
+         </widget>
+       </item>
+       <!-- Femur Joint -->
+       <item row="1" column="0">
+         <widget class="QLabel" name="femur_slider_label">
+           <property name="text">
+             <string>Femur:</string>
+           </property>
+         </widget>
+       </item>
+       <item row="1" column="1">
+         <widget class="QSlider" name="femur_slider">
+           <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+           </property>
+         </widget>
+       </item>
+       <item row="1" column="2">
+         <widget class="QLabel" name="target_femur_label">
+           <property name="text">
+             <string>Target Femur: 0°</string>
+           </property>
+         </widget>
+       </item>
+       <!-- Tibia Joint -->
+       <item row="2" column="0">
+         <widget class="QLabel" name="tibia_slider_label">
+           <property name="text">
+             <string>Tibia:</string>
+           </property>
+         </widget>
+       </item>
+       <item row="2" column="1">
+         <widget class="QSlider" name="tibia_slider">
+           <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+           </property>
+         </widget>
+       </item>
+       <item row="2" column="2">
+         <widget class="QLabel" name="target_tibia_label">
+           <property name="text">
+             <string>Target Tibia: 0°</string>
+           </property>
+         </widget>
+       </item>
+       <!-- Velocity Control -->
+       <item row="3" column="0">
+         <widget class="QLabel" name="velocity_slider_label">
+           <property name="text">
+             <string>Velocity:</string>
+           </property>
+         </widget>
+       </item>
+       <item row="3" column="1">
+         <widget class="QSlider" name="velocity_slider">
+           <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+           </property>
+         </widget>
+       </item>
+       <item row="3" column="2">
+         <widget class="QLabel" name="velocity_label">
+           <property name="text">
+             <string>Velocity: 0%</string>
+           </property>
+         </widget>
+       </item>
+       <!-- Home Position Button -->
+       <item row="4" column="0" colspan="3">
+         <widget class="QPushButton" name="home_position_button">
+           <property name="text">
+             <string>Move to Home Position (0°)</string>
+           </property>
+         </widget>
+       </item>
+     </layout>
+    </widget>
+   </item>
+   
+   <!-- Current Position Display -->
+   <item>
+    <widget class="QGroupBox" name="current_position_group">
+     <property name="title">
+      <string>Current End-Effector Position</string>
+     </property>
+     <layout class="QVBoxLayout" name="current_position_layout">
+       <item>
+         <widget class="QLabel" name="current_x_label">
+           <property name="text">
+             <string>X Position: 0.0 mm</string>
+           </property>
+         </widget>
+       </item>
+       <item>
+         <widget class="QLabel" name="current_y_label">
+           <property name="text">
+             <string>Y Position: 0.0 mm</string>
+           </property>
+         </widget>
+       </item>
+       <item>
+         <widget class="QLabel" name="current_z_label">
+           <property name="text">
+             <string>Z Position: 0.0 mm</string>
+           </property>
+         </widget>
+       </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>

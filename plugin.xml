@@ -1,0 +1,33 @@
+<library path="scripts">
+  <class name="LegControllerGUI" 
+         type="leg_controller_gui.LegControllerGUI" 
+         base_class_type="rqt_gui_py::Plugin">
+    <description>
+      GUI for Asterisk hexapod robot single leg control
+    </description>
+    <qtgui>
+      <group>
+        <label>Robot Control</label>
+      </group>
+      <label>Asterisk 単脚コントローラ</label>
+      <icon type="theme">system-help</icon>
+      <statustip>GUI for controlling a single leg of the Asterisk hexapod robot</statustip>
+    </qtgui>
+  </class>
+
+  <class name="HexapodControllerGUI"
+        type="hexapod_controller_gui.HexapodControllerGUIPlugin"
+        base_class_type="rqt_gui_py::Plugin">
+    <description>
+      GUI for Asterisk hexapod robot full control
+    </description>
+    <qtgui>
+      <group>
+        <label>Robot Control</label>
+      </group>
+      <label>Asterisk 六脚コントローラ</label>
+      <icon type="theme">system-help</icon>
+      <statustip>GUI for controlling all six legs of the Asterisk hexapod robot</statustip>
+    </qtgui>
+  </class>
+</library>
