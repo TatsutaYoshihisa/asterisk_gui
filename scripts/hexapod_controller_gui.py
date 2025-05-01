@@ -529,12 +529,12 @@ class HexapodControllerGUIPlugin(Plugin):
             # ROSインターフェースの初期化
             self.leg_publishers[leg_id] = {
                 'command': rospy.Publisher(
-                    f'/dual_leg_controller/{leg_id}/command', 
+                    f'/asterisk/leg/{leg_id}/command/joint_angles', 
                     LegCommand, 
                     queue_size=1
                 ),
                 'position': rospy.Publisher(
-                    f'/dual_leg_controller/{leg_id}/position_command',
+                    f'/asterisk/leg/{leg_id}/command/foot_position',
                     LegPosition,
                     queue_size=1
                 )
@@ -542,13 +542,13 @@ class HexapodControllerGUIPlugin(Plugin):
             
             self.leg_subscribers[leg_id] = {
                 'position': rospy.Subscriber(
-                    f'/dual_leg_controller/{leg_id}/foot_position', 
+                    f'/asterisk/leg/{leg_id}/state/foot_position', 
                     LegPosition, 
                     lambda msg, l=leg_id: self.position_callback(msg, l),
                     queue_size=1
                 ),
                 'joints': rospy.Subscriber(
-                    f'/dual_leg_controller/{leg_id}/joint_angles',
+                    f'/asterisk/leg/{leg_id}/state/read_angle',
                     LegCommand,
                     lambda msg, l=leg_id: self.joint_angles_callback(msg, l),
                     queue_size=1
